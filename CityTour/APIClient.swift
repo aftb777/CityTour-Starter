@@ -23,7 +23,9 @@ class APIClient {
             guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
                 return
             }
-            print(json)
+            
+            let JSON = try JSONDecoder().decode(PlacesResponseModel.self, from: data)
+            
         } catch{
             print(error.localizedDescription)
         }
