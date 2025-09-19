@@ -12,6 +12,7 @@
 		208ECC592BD94530001C3A27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 208ECC582BD94530001C3A27 /* Assets.xcassets */; };
 		208ECC5C2BD94530001C3A27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 208ECC5B2BD94530001C3A27 /* Preview Assets.xcassets */; };
 		208ECC642BD9457F001C3A27 /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208ECC632BD9457F001C3A27 /* Keyword.swift */; };
+		27D66C4E2E7D74180085A7C2 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D66C4D2E7D74180085A7C2 /* PlaceModel.swift */; };
 		27F5A6832E7C49E20005B486 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F5A6822E7C49E20005B486 /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +23,7 @@
 		208ECC582BD94530001C3A27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		208ECC5B2BD94530001C3A27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		208ECC632BD9457F001C3A27 /* Keyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyword.swift; sourceTree = "<group>"; };
+		27D66C4D2E7D74180085A7C2 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		27F5A6822E7C49E20005B486 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 		208ECC622BD94575001C3A27 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				27D66C4D2E7D74180085A7C2 /* PlaceModel.swift */,
 				208ECC632BD9457F001C3A27 /* Keyword.swift */,
 			);
 			path = Models;
@@ -153,6 +156,7 @@
 			files = (
 				208ECC572BD9452E001C3A27 /* PlacesView.swift in Sources */,
 				208ECC642BD9457F001C3A27 /* Keyword.swift in Sources */,
+				27D66C4E2E7D74180085A7C2 /* PlaceModel.swift in Sources */,
 				208ECC552BD9452E001C3A27 /* CityTourApp.swift in Sources */,
 				27F5A6832E7C49E20005B486 /* APIClient.swift in Sources */,
 			);
