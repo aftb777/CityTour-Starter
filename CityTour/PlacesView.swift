@@ -8,7 +8,7 @@ import SwiftUI
 
 struct PlacesView: View {
     
-    let ApiClient = APIClient()
+    @StateObject private var viewModel = PlacesViewModel()
     
     var body: some View {
         VStack {
