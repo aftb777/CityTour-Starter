@@ -12,6 +12,7 @@
 		208ECC592BD94530001C3A27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 208ECC582BD94530001C3A27 /* Assets.xcassets */; };
 		208ECC5C2BD94530001C3A27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 208ECC5B2BD94530001C3A27 /* Preview Assets.xcassets */; };
 		208ECC642BD9457F001C3A27 /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208ECC632BD9457F001C3A27 /* Keyword.swift */; };
+		273045922E82AE5F004130AB /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273045912E82AE5E004130AB /* ResponseType.swift */; };
 		2776DCAD2E7D86C600FE69D8 /* PlacesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776DCAC2E7D86C600FE69D8 /* PlacesResponseModel.swift */; };
 		278FEEB52E7EAF8E005C2042 /* PlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278FEEB42E7EAF8E005C2042 /* PlacesViewModel.swift */; };
 		27D66C4E2E7D74180085A7C2 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D66C4D2E7D74180085A7C2 /* PlaceModel.swift */; };
@@ -25,6 +26,7 @@
 		208ECC582BD94530001C3A27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		208ECC5B2BD94530001C3A27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		208ECC632BD9457F001C3A27 /* Keyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyword.swift; sourceTree = "<group>"; };
+		273045912E82AE5E004130AB /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
 		2776DCAC2E7D86C600FE69D8 /* PlacesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesResponseModel.swift; sourceTree = "<group>"; };
 		278FEEB42E7EAF8E005C2042 /* PlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewModel.swift; sourceTree = "<group>"; };
 		27D66C4D2E7D74180085A7C2 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				27D66C4D2E7D74180085A7C2 /* PlaceModel.swift */,
 				2776DCAC2E7D86C600FE69D8 /* PlacesResponseModel.swift */,
 				208ECC632BD9457F001C3A27 /* Keyword.swift */,
+				273045912E82AE5E004130AB /* ResponseType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				208ECC552BD9452E001C3A27 /* CityTourApp.swift in Sources */,
 				278FEEB52E7EAF8E005C2042 /* PlacesViewModel.swift in Sources */,
 				2776DCAD2E7D86C600FE69D8 /* PlacesResponseModel.swift in Sources */,
+				273045922E82AE5F004130AB /* ResponseType.swift in Sources */,
 				27F5A6832E7C49E20005B486 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +314,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CityTour/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "City Tour requires users Data to find nearby places around you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -338,6 +343,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CityTour/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "City Tour requires users Data to find nearby places around you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

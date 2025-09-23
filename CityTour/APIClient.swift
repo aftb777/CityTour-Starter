@@ -12,6 +12,27 @@ class APIClient {
     private let baseURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
     private let APIKey = "YOUR_API_KEY_HERE"
     
+    private func responseType(statusCode : Int) -> ResponseType {
+        // 200-299 - OK
+        // 400-499 - bad request
+        // 500-599 - server is wrong
+        
+        switch statusCode {
+        case 200..<300:
+            print("Success")
+            return ResponseType.succes
+        case 400..<500:
+            print("Bad Request")
+            return .badRequest
+        case 500..<600:
+            print("Server Error")
+            return .serverError
+        default:
+            print("Unknown Error")
+            return ResponseType.notFound
+        }
+    }
+    
     // Function to fetch nearby places
     func getPlaces(forKeyword keyword : String, latitude : Double, longitude : Double) async {
         guard let url = createURL(latitude: latitude, longitude: longitude, keyword: keyword) else {
@@ -19,12 +40,24 @@ class APIClient {
         }
         
         do {
-            let (data, _) = try await URLSession.shared.data(from: url)
+            let (data, response) = try await URLSession.shared.data(from: url)
+            
+            // for status code to check URL status
+            guard let response = response as? HTTPURLResponse else {
+                return
+            }
+            let responseType = responseType(statusCode: response.statusCode)
+            
+            switch responseType {
+            case .badRequest, .notFound, .serverError:
+                print("Error")
+            case .succes:
+                let JSON = try JSONDecoder().decode(PlacesResponseModel.self, from: data)
+            }
+            
             guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
                 return
             }
-            
-            let JSON = try JSONDecoder().decode(PlacesResponseModel.self, from: data)
             
         } catch{
             print(error.localizedDescription)
