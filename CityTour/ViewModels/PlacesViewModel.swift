@@ -32,6 +32,10 @@ class PlacesViewModel : NSObject, ObservableObject {
         // User se permission maangna (only when app in use)
         locationManager.requestWhenInUseAuthorization()
     }
+    
+    func fetchPlaces(location : CLLocation) async {
+        await ApiClient.getPlaces(forKeyword: "Coffee", latitude: CLLocation.init().coordinate.latitude, longitude: CLLocation.init().coordinate.latitude)
+    }
 }
 
 extension PlacesViewModel: @MainActor CLLocationManagerDelegate {
@@ -58,5 +62,9 @@ extension PlacesViewModel: @MainActor CLLocationManagerDelegate {
         
         // CurrentLocation property me save kar lo (baad me View use karega)
         CurrentLocation = location
+        
+        Task {
+            await fetchPlaces(location: location)
+        }
     }
 }

@@ -17,9 +17,7 @@ struct PlacesView: View {
                 .foregroundStyle(.tint)
             Text("Hello, world!")
         }
-        .task {
-            
-        }
+
     }
 }
 

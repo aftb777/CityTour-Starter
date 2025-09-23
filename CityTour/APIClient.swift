@@ -52,7 +52,7 @@ class APIClient {
             case .badRequest, .notFound, .serverError:
                 print("Error")
             case .succes:
-                let JSON = try JSONDecoder().decode(PlacesResponseModel.self, from: data)
+                let _ = try JSONDecoder().decode(PlacesResponseModel.self, from: data)
             }
             
 //            guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
