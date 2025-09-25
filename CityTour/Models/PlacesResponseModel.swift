@@ -15,8 +15,11 @@ struct PlacesResponseModel : Decodable {
     
 }
 
-struct PlacesDetailResponseModel : Decodable {
+struct PlacesDetailResponseModel : Decodable, Identifiable {
     
+    var id: String {
+        return placeId
+    }
     let placeId : String
     let name : String
     let photos : [PhotoInfo]? // Optional
