@@ -16,6 +16,7 @@
 		2776DCAD2E7D86C600FE69D8 /* PlacesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776DCAC2E7D86C600FE69D8 /* PlacesResponseModel.swift */; };
 		278FEEB52E7EAF8E005C2042 /* PlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278FEEB42E7EAF8E005C2042 /* PlacesViewModel.swift */; };
 		27D66C4E2E7D74180085A7C2 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D66C4D2E7D74180085A7C2 /* PlaceModel.swift */; };
+		27E5C6D52E8511BE00DF0886 /* PlacesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E5C6D42E8511BE00DF0886 /* PlacesError.swift */; };
 		27F5A6832E7C49E20005B486 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F5A6822E7C49E20005B486 /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		2776DCAC2E7D86C600FE69D8 /* PlacesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesResponseModel.swift; sourceTree = "<group>"; };
 		278FEEB42E7EAF8E005C2042 /* PlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewModel.swift; sourceTree = "<group>"; };
 		27D66C4D2E7D74180085A7C2 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		27E5C6D42E8511BE00DF0886 /* PlacesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesError.swift; sourceTree = "<group>"; };
 		27F5A6822E7C49E20005B486 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 				2776DCAC2E7D86C600FE69D8 /* PlacesResponseModel.swift */,
 				208ECC632BD9457F001C3A27 /* Keyword.swift */,
 				273045912E82AE5E004130AB /* ResponseType.swift */,
+				27E5C6D42E8511BE00DF0886 /* PlacesError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				208ECC572BD9452E001C3A27 /* PlacesView.swift in Sources */,
+				27E5C6D52E8511BE00DF0886 /* PlacesError.swift in Sources */,
 				208ECC642BD9457F001C3A27 /* Keyword.swift in Sources */,
 				27D66C4E2E7D74180085A7C2 /* PlaceModel.swift in Sources */,
 				208ECC552BD9452E001C3A27 /* CityTourApp.swift in Sources */,

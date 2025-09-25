@@ -34,9 +34,9 @@ class APIClient {
     }
     
     // Function to fetch nearby places
-    func getPlaces(forKeyword keyword : String, latitude : Double, longitude : Double) async {
+    func getPlaces(forKeyword keyword : String, latitude : Double, longitude : Double) async -> Result<PlacesResponseModel, PlacesError> {
         guard let url = createURL(latitude: latitude, longitude: longitude, keyword: keyword) else {
-            return
+            return .failure(.InvalidURL)
         }
         
         do {
@@ -44,15 +44,16 @@ class APIClient {
             
             // for status code to check URL status
             guard let response = response as? HTTPURLResponse else {
-                return
+                return .failure(.InvalidResponse)
             }
             let responseType = responseType(statusCode: response.statusCode)
             
             switch responseType {
             case .badRequest, .notFound, .serverError:
-                print("Error")
+                return .failure(.APIerror)
             case .succes:
-                let _ = try JSONDecoder().decode(PlacesResponseModel.self, from: data)
+                let decodedJSON = try JSONDecoder().decode(PlacesResponseModel.self, from: data)
+                return .success(decodedJSON)
             }
             
 //            guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
@@ -61,6 +62,7 @@ class APIClient {
             
         } catch{
             print(error.localizedDescription)
+            return .failure(.APIerror)
         }
     }
     
