@@ -11,6 +11,7 @@ import CoreLocation
 class APIClient {
     private let baseURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
     private let APIKey = "YOUR_API_KEY_HERE"
+    typealias PlacesResult = Result<PlacesResponseModel, PlacesError>
     
     private func responseType(statusCode : Int) -> ResponseType {
         // 200-299 - OK
@@ -34,7 +35,7 @@ class APIClient {
     }
     
     // Function to fetch nearby places
-    func getPlaces(forKeyword keyword : String, latitude : Double, longitude : Double) async -> Result<PlacesResponseModel, PlacesError> {
+    func getPlaces(forKeyword keyword : String, latitude : Double, longitude : Double) async -> PlacesResult {
         guard let url = createURL(latitude: latitude, longitude: longitude, keyword: keyword) else {
             return .failure(.InvalidURL)
         }
