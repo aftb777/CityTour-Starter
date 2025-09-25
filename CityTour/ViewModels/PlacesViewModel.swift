@@ -19,6 +19,8 @@ class PlacesViewModel : NSObject, ObservableObject {
     // User ka current location yaha store hoga
     var CurrentLocation : CLLocation?
     
+    @Published var selectedKeyword : Keyword = .cafe
+    
     // CoreLocation ka manager -> isse hi location aur permissions handle karte hain
     private let locationManager = CLLocationManager()
     
