@@ -17,10 +17,21 @@ class PlacesViewModel : NSObject, ObservableObject {
     private let ApiClient = APIClient()
     
     // User ka current location yaha store hoga
-    var CurrentLocation : CLLocation?
+    private var CurrentLocation : CLLocation?
     
     @Published var selectedKeyword : Keyword = .cafe
     @Published var places : [PlacesDetailResponseModel] = []
+    
+    func changeKeyword(to keyword : Keyword) async{
+        guard let currentLocation = CurrentLocation else { return }
+        if selectedKeyword == keyword {
+            return
+        } else {
+            selectedKeyword = keyword
+            
+        }
+        let result = await ApiClient.getPlaces(forKeyword: keyword.apiName, latitude: CLLocation.init().coordinate.latitude, longitude: CLLocation.init().coordinate.latitude)
+    }
     
     // CoreLocation ka manager -> isse hi location aur permissions handle karte hain
     private let locationManager = CLLocationManager()
@@ -41,8 +52,8 @@ class PlacesViewModel : NSObject, ObservableObject {
         
         switch result {
         case .success(let PlacesResponseModel):
-            let places = PlacesResponseModel.results
-        case .failure(let PlacesError):
+            _ = PlacesResponseModel.results
+        case .failure(_):
             break
         }
     }
